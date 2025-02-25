@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick Intro</title>
+</head>
+
+<body>
+
+    <h1>Min Første Javascript Nettside</h1>
+    <button onclick="skiftTekst()">Klick Here</button>
+    <p id="tekst">Klick Linken Din Ape</p>
+    <img src="ape.jpeg" alt="" id="ape" onclick="skiftBilde()">
+    <img src="esel.jpeg" alt="" id="esel" onclick="bildeTekst()">
+
+    <script>
+        const tekst = document.getElementById("tekst")
+        function skiftTekst() {
+            if (tekst.innerHTML == "Whops, den virker ikke") {
+                tekst.innerHTML = "Click Linken Din Ape"
+                tekst.style.color = "black"
+            }
+            else {
+                tekst.style.color = "red";
+                tekst.innerHTML = "Whops, den virker ikke";
+            }
+
+        }
+
+        const ape = document.getElementById("ape")
+        let antallclick = 0
+        function skiftBilde() {
+            if (antallclick % 2 == 0) {
+                ape.src = "ape.jpeg";
+            } else {
+                ape.src = "ape2.jpeg";
+                ape.style.borderRadius = "5%";
+            }
+            antallclick++;
+            console.log(antallclick);
+        }
+
+        /* Testing virker ikke
+        const esel = document.getElementById("esel")
+        function bildeTekst() {
+            text.textContent = "har blitt jukka. Ta en banan og prøv igjen"
+        } */
+
+    </script>
+</body>
+
+</html>
